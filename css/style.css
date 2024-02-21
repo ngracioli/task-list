@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+/* Variáveis de cor */
+:root {
+  --primarybg-color: #131313;
+  --secondarybg-color: #272727;
+  --tertiarybg-color: #646464;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: rgb(70, 70, 70) 0;
+}
+
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  content: none;
+  box-sizing: border-box;
+  list-style: none;
+  line-height: 1;
+}
+
+/* Estilos globais */
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--primarybg-color);
+}
+
+/* Container principal */
+.task-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+  height: 50rem;
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  background-color: var(--secondarybg-color);
+}
+
+.task-box h1 {
+  color: var(--white-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Linha de entrada de tarefa */
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  background-color: var(--white-color);
+}
+
+.row input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 1.2rem;
+}
+
+.row button {
+  cursor: pointer;
+  border: none;
+  width: 100px;
+  height: 100%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background-color: var(--tertiarybg-color);
+  transition: 0.3s;
+}
+
+.row button:hover {
+  background-color: var(--primarybg-color);
+}
+
+.row i {
+  font-size: 1.2rem;
+  color: var(--white-color);
+}
+
+/* Lista de tarefas */
+#listTask {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--white-color);
+  overflow-wrap: break-word;
+  overflow-y: auto;
+}
+
+#listTask li {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  padding: 1.2rem 3em;
+  font-size: 1.1rem;
+}
+
+#listTask li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 13.5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--tertiarybg-color);
+}
+
+#listTask li.checked {
+  color: var(--gray-color);
+  text-decoration: line-through;
+}
+
+#listTask li.checked::before {
+  background-color: var(--primarybg-color);
+}
+
+#listTask li.checked::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 23px;
+  width: 12px;
+  height: 6px;
+  border-left: 2px solid var(--white-color);
+  border-bottom: 2px solid var(--white-color);
+  transform: rotate(315deg);
+}
+
+#listTask li span {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  font-size: 2.3rem;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+#listTask li span:hover {
+  color: var(--white-color);
+  background-color: var(--primarybg-color);
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  .task-box {
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    min-height: 10vh;
+    border-radius: 0;
+  }
+}
