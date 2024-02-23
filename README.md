@@ -9,7 +9,7 @@
 
 ---
 
-### 💻 Técnologias
+### 💻 Tecnologias
 - **HTML**
 - **CSS**
 - **JavaScript**
